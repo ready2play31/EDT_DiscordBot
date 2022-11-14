@@ -102,34 +102,4 @@ def affiche_cours():
     elif jour_semaine not in jours_semaine_OK:
         return("cest le week end !")
 
-
-    #for cle,valeur in dico_cours.items():
-    #   print(valeur)
-
-#############FIN FONCTION AFFICHE_COURS#################
-
-
-intents = discord.Intents.all()
-client = discord.Client(intents=intents)
-
-@client.event
-async def on_ready():
-    """when bot is ready"""
-    print("le bot est prêt")
-
-@client.event
-async def on_message(message):
-    """when bot receive message"""
-    #print(message.channel.id)
-    if message.content.lower() == "ping":
-        await message.channel.send("pong")
-    elif message.content.lower() == "salle":
-        output = affiche_cours()
-        await message.channel.send(output)
-
-#token dev
-client.run(os.getenv("TOKEN_DEV"))
-
-# jours = dans div DivBody
-# on recherche les div Jour
-
+affiche_cours()
