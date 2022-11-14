@@ -128,7 +128,7 @@ async def on_message(message):
         await message.channel.send(output)
 
 #token dev
-client.run(os.getenv("TOKEN_DEV"))
+client.run(os.getenv("TOKEN_PROD"))
 
 # jours = dans div DivBody
 # on recherche les div Jour
